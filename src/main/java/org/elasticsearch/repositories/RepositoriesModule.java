@@ -26,6 +26,8 @@ import org.elasticsearch.common.inject.AbstractModule;
 import org.elasticsearch.common.inject.Module;
 import org.elasticsearch.repositories.fs.FsRepository;
 import org.elasticsearch.repositories.fs.FsRepositoryModule;
+import org.elasticsearch.repositories.ssh.SshRepository;
+import org.elasticsearch.repositories.ssh.SshRepositoryModule;
 import org.elasticsearch.repositories.uri.URLRepository;
 import org.elasticsearch.repositories.uri.URLRepositoryModule;
 import org.elasticsearch.snapshots.RestoreService;
@@ -46,6 +48,7 @@ public class RepositoriesModule extends AbstractModule {
     public RepositoriesModule() {
         registerRepository(FsRepository.TYPE, FsRepositoryModule.class);
         registerRepository(URLRepository.TYPE, URLRepositoryModule.class);
+        registerRepository(SshRepository.TYPE, SshRepositoryModule.class);
     }
 
     /**
